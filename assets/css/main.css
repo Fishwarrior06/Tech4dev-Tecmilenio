@@ -23,8 +23,11 @@
   --default-color: #555555; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #00534c  ; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #68a4c4; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color2: #00534c; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color3: #26d07c; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contrast-color2: #00534c; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -87,6 +90,7 @@ h6 {
   font-family: var(--heading-font);
 }
 
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -144,7 +148,7 @@ h6 {
 .pulsating-play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+  background: radial-gradient(var(--accent-color2) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
   border-radius: 50%;
   display: block;
   position: relative;
@@ -163,7 +167,7 @@ h6 {
   animation-timing-function: steps;
   opacity: 1;
   border-radius: 50%;
-  border: 5px solid color-mix(in srgb, var(--accent-color), transparent 30%);
+  border: 5px solid color-mix(in srgb, var(--accent-color2), transparent 30%);
   top: -15%;
   left: -15%;
   background: rgba(198, 16, 0, 0);
@@ -202,7 +206,7 @@ h6 {
 }
 
 .pulsating-play-btn:hover:after {
-  border-left: 15px solid var(--accent-color);
+  border-left: 15px solid var(--accent-color2);
   transform: scale(20);
 }
 
@@ -498,7 +502,7 @@ h6 {
   color: var(--default-color);
   background-color: var(--background-color);
   font-size: 14px;
-  position: relative;
+  position: relative; 
 }
 
 .footer .footer-newsletter {
@@ -545,8 +549,8 @@ h6 {
   font-size: 16px;
   padding: 0 20px;
   margin: -7px -8px -7px 0;
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: var(--accent-color3);
+  color: var(--contrast-color3);
   transition: 0.3s;
   border-radius: 50px;
 }
@@ -692,9 +696,10 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color2);
   width: 40px;
   height: 40px;
+  border: 2px solid var(--contrast-color);
   border-radius: 4px;
   transition: all 0.4s;
 }
@@ -706,7 +711,7 @@ h6 {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, var(--accent-color2), transparent 20%);
   color: var(--contrast-color);
 }
 
@@ -847,7 +852,7 @@ section,
   display: flex;
   align-items: center;
   position: relative;
-  background-color: transparent;
+  background-color: #f4f8fb;
 }
 
 .hero::after {
@@ -857,7 +862,7 @@ section,
   top: 0;
   width: 130%;
   height: 95%;
-  background: linear-gradient(to right, color-mix(in srgb, var(--background-color), transparent 90%), var(--background-color)), url("../img/hero-bg.jpg") center top no-repeat;
+  background: linear-gradient(to right, rgba(0, 83, 76, 0.8), rgba(0, 83, 76, 0.8)), url("../img/hero-bg.jpg") center top no-repeat;
   background-size: cover;
   z-index: 0;
   border-radius: 0 0 50% 50%;
@@ -871,7 +876,7 @@ section,
   top: 0;
   width: 130%;
   height: 96%;
-  background: var(--background-color);
+  background: #f4f8fb;
   opacity: 0.3;
   z-index: 0;
   border-radius: 0 0 50% 50%;
@@ -914,6 +919,7 @@ section,
 
 .hero p {
   width: 80%;
+  font-size: 19px;
   margin: 0 auto 30px auto;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   animation: fadeInDown 1s both 0.2s;
@@ -943,14 +949,44 @@ section,
   transition: 0.5s;
   line-height: 1;
   margin: 10px;
-  color: var(--default-color);
+  background: #00534c;
+  color: #ffffff;
   animation: fadeInUp 1s both 0.4s;
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--accent-color2);
 }
 
 .hero .btn-get-started:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: #00534c;
+  color: #26d07c;
+  text-decoration: none;
+}
+
+.btn-container1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Espacio arriba del botón */
+  margin-bottom: 50px; /* Espacio antes del footer */
+}
+
+.btn-get-started1 {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  background: #00534c;
+  color: #ffffff;
+  animation: fadeInUp 1s both 0.4s;
+  border: 2px solid var(--accent-color2);
+}
+
+.btn-get-started1:hover {
+  background: #00534c;
+  color: #26d07c;
   text-decoration: none;
 }
 
@@ -1021,10 +1057,10 @@ section,
 # Featured Services Section
 --------------------------------------------------------------*/
 .featured-services {
-  --cyan-color: #0dcaf0;
-  --orange-color: #fd7e14;
-  --teal-color: #20c997;
-  --red-color: #df1529;
+  --cyan-color: #26d07c;
+  --orange-color: #26d07c;
+  --teal-color: #26d07c;
+  --red-color: #26d07c;
 }
 
 .featured-services .service-item {
