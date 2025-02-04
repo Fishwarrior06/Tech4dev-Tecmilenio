@@ -2683,3 +2683,10 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+#voteChart {
+  width: 1250px;           /* Puedes ajustar este valor */
+  height: 500px;        /* Ajusta la altura para que no se haga muy largo */
+  margin: 0 auto;       /* Centra el gráfico */
+  overflow: hidden;     /* Asegura que no se "desborde" al hacer scroll */
+}
