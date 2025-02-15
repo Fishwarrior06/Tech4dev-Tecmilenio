@@ -1,7 +1,7 @@
-// Colores estáticos (15 colores)
+// Colores estáticos (10 colores)
 const colors = [
-    "#FF5733", "#33FF57", "#3357FF", "#FF33A6", "#FFD633", "#33FFDA", "#A633FF", "#FF8133", "#33FF8F", "#FF3333",
-    "#FF8C33", "#33D8FF", "#33FF57", "#33D833", "#FF5733"
+    "#FF5733", "#33FF57", "#3357FF", "#FF33A6", "#FFD633", 
+    "#33FFDA", "#A633FF", "#FF8133", "#33FF8F", "#FF3333"
 ];
 
 let previousVotes = {}; // Almacena los votos previos para evitar actualizaciones innecesarias
@@ -39,7 +39,7 @@ async function fetchVotes(url) {
         }
 
         let votes = {};
-        for (let i = 1; i <= 15; i++) {
+        for (let i = 1; i <= 10; i++) {
             votes[`Equipo ${i}`] = 0;
         }
 
@@ -48,7 +48,7 @@ async function fetchVotes(url) {
             if (!team) return;
 
             let teamNumber = parseInt(team.split(" ")[1]);
-            if (teamNumber >= 1 && teamNumber <= 15) {
+            if (teamNumber >= 1 && teamNumber <= 10) {
                 votes[`Equipo ${teamNumber}`] = (votes[`Equipo ${teamNumber}`] || 0) + 1;
             }
         });
@@ -66,10 +66,10 @@ const ctx = document.getElementById('voteChart').getContext('2d');
 let voteChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: Array.from({ length: 15 }, (_, index) => `Equipo ${index + 1}`),
+        labels: Array.from({ length: 10 }, (_, index) => `Equipo ${index + 1}`),
         datasets: [{
             label: 'Votos',
-            data: new Array(15).fill(0),
+            data: new Array(10).fill(0),
             backgroundColor: colors,
         }]
     },
