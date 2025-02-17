@@ -1,36 +1,19 @@
-// Colores estáticos (10 colores)
 const colors = [
     "#FF5733", "#33FF57", "#3357FF", "#FF33A6", "#FFD633", 
     "#33FFDA", "#A633FF", "#FF8133", "#33FF8F", "#FF3333"
 ];
 
-let previousVotes = {}; // Almacena los votos previos para evitar actualizaciones innecesarias
+let previousVotes = {};
 
+// Función para verificar si los votos han cambiado
 function isDataChanged(newVotes) {
     return JSON.stringify(previousVotes) !== JSON.stringify(newVotes);
 }
 
-async function fetchApiConfig() {
+// Función para obtener votos desde el backend
+async function fetchVotes() {
     try {
-        const response = await fetch('/get-api-config');
-        const data = await response.json();
-        
-        if (data.sheetId && data.apiKey) {
-            const sheetId = data.sheetId;
-            const apiKey = data.apiKey;
-            const range = "A2:E100"; // Rango de la hoja
-            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
-
-            fetchVotes(url); // Llamamos a la función fetchVotes pasando la URL construida
-        }
-    } catch (error) {
-        console.error("Error obteniendo configuración de la API:", error);
-    }
-}
-
-async function fetchVotes(url) {
-    try {
-        const response = await fetch(url);
+        const response = await fetch('/get-votes');
         const data = await response.json();
 
         if (!data || !data.values) {
@@ -93,6 +76,7 @@ let voteChart = new Chart(ctx, {
     plugins: [ChartDataLabels]
 });
 
+// Actualizar gráfico
 function updateChart(votes) {
     let teams = Object.keys(votes);
     voteChart.data.labels = teams;
@@ -100,8 +84,6 @@ function updateChart(votes) {
     voteChart.update();
 }
 
-// Inicializa la petición de configuración y luego obtiene los votos
-fetchApiConfig();
-
-// Actualiza los votos cada 5 segundos
-setInterval(() => fetchApiConfig(), 5000);
+// Obtener los votos y actualizar cada 5 segundos
+fetchVotes();
+setInterval(fetchVotes, 5000);
