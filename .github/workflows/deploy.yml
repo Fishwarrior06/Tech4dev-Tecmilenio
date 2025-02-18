@@ -1,0 +1,30 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main  # O la rama que uses
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Configurar SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy a la VPS
+        run: |
+          ssh -i ~/.ssh/id_rsa root@${{ secrets.VPS_HOST }} << 'EOF'
+            cd /root/Tech4dev-Tecmilenio
+            git pull origin main
+            npm install  # Si usas Node.js, por ejemplo
+            pm2 restart server.js  # O el nombre de tu archivo de app
+          EOF
