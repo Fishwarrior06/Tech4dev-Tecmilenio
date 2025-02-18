@@ -2684,9 +2684,22 @@ section,
   font-size: 14px;
 }
 
+.scroll-container {
+  width: 100%;       /* Usa todo el ancho disponible */
+  overflow-x: auto;  /* Activa el scroll horizontal si el gráfico es más grande */
+  display: flex;     
+  justify-content: center; 
+}
+
 #voteChart {
-  width: 1250px;           /* Puedes ajustar este valor */
-  height: 500px;        /* Ajusta la altura para que no se haga muy largo */
-  margin: 0 auto;       /* Centra el gráfico */
-  overflow: hidden;     /* Asegura que no se "desborde" al hacer scroll */
+  width: 1220px; /* Ajusta el ancho del gráfico según sea necesario */
+  max-width: 1220px;
+  height: 500px;
+  margin: 0 center; /* Centra el gráfico en la pantalla */
+}
+
+@media (max-width: 768px) {
+  #voteChart {
+    width: 2000px;   /* Ajusta el ancho del gráfico para pantallas más pequeñas */
+  }
 }
