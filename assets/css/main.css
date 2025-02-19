@@ -529,7 +529,7 @@ h6 {
 }
 
 .footer .footer-newsletter .newsletter-form:focus-within {
-  border-color: var(--accent-color);
+  border-color: #26d07c;
 }
 
 .footer .footer-newsletter .newsletter-form input[type=email] {
@@ -556,7 +556,8 @@ h6 {
 }
 
 .footer .footer-newsletter .newsletter-form input[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: #00534c;
+  text-decoration: none;
 }
 
 .footer .footer-top {
@@ -620,10 +621,6 @@ h6 {
   display: inline-block;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   line-height: 1;
-}
-
-.footer .footer-links ul a:hover {
-  color: var(--accent-color);
 }
 
 .footer .footer-about a {
@@ -2469,16 +2466,25 @@ section,
 }
 
 .contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    background: #00534c;
+    color: #ffffff;
+    animation: fadeInUp 1s both 0.4s;
+    border: 2px solid var(--accent-color2);
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: #00534c;
+  color: #26d07c;
+  text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -2702,4 +2708,10 @@ section,
   #voteChart {
     width: 2000px;   /* Ajusta el ancho del gráfico para pantallas más pequeñas */
   }
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -584,7 +584,7 @@ url("./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("wof
 .bi-envelope-fill::before { content: "\f32c"; }
 .bi-envelope-open-fill::before { content: "\f32d"; }
 .bi-envelope-open::before { content: "\f32e"; }
-.bi-envelope::before { content: "\f32f"; }
+.bi-envelope::before { content: "\f32f"; color: #00534c; }
 .bi-eraser-fill::before { content: "\f330"; }
 .bi-eraser::before { content: "\f331"; }
 .bi-exclamation-circle-fill::before { content: "\f332"; }
@@ -768,10 +768,10 @@ url("./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("wof
 .bi-gear-wide::before { content: "\f3e4"; }
 .bi-gear::before { content: "\f3e5"; }
 .bi-gem::before { content: "\f3e6"; }
-.bi-geo-alt-fill::before { content: "\f3e7"; }
-.bi-geo-alt::before { content: "\f3e8"; }
-.bi-geo-fill::before { content: "\f3e9"; }
-.bi-geo::before { content: "\f3ea"; }
+.bi-geo-alt-fill::before { content: "\f3e7"; color: #00534c; }
+.bi-geo-alt::before { content: "\f3e8"; color: #00534c; }
+.bi-geo-fill::before { content: "\f3e9"; color: #00534c; }
+.bi-geo::before { content: "\f3ea"; color: #00534c; }
 .bi-gift-fill::before { content: "\f3eb"; }
 .bi-gift::before { content: "\f3ec"; }
 .bi-github::before { content: "\f3ed"; }
@@ -1241,8 +1241,8 @@ url("./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("wof
 .bi-telephone-plus-fill::before { content: "\f5bd"; }
 .bi-telephone-plus::before { content: "\f5be"; }
 .bi-telephone-x-fill::before { content: "\f5bf"; }
-.bi-telephone-x::before { content: "\f5c0"; }
-.bi-telephone::before { content: "\f5c1"; }
+.bi-telephone-x::before { content: "\f5c0"; color: #00534c; }
+.bi-telephone::before { content: "\f5c1"; color: #00534c; }
 .bi-terminal-fill::before { content: "\f5c2"; }
 .bi-terminal::before { content: "\f5c3"; }
 .bi-text-center::before { content: "\f5c4"; }
@@ -1452,7 +1452,7 @@ url("./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("wof
 .bi-envelope-plus::before { content: "\f694"; }
 .bi-envelope-slash-fill::before { content: "\f696"; }
 .bi-envelope-slash::before { content: "\f697"; }
-.bi-envelope-x-fill::before { content: "\f699"; }
+.bi-envelope-x-fill::before { content: "\f699";  }
 .bi-envelope-x::before { content: "\f69a"; }
 .bi-explicit-fill::before { content: "\f69b"; }
 .bi-explicit::before { content: "\f69c"; }
