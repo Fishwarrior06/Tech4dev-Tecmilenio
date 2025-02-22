@@ -396,7 +396,7 @@ url("./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("wof
 .bi-check2-all::before { content: "\f26f"; }
 .bi-check2-circle::before { content: "\f270"; }
 .bi-check2-square::before { content: "\f271"; }
-.bi-check2::before { content: "\f272"; }
+.bi-check2::before { content: "\f272"; color: #059652;}
 .bi-chevron-bar-contract::before { content: "\f273"; }
 .bi-chevron-bar-down::before { content: "\f274"; }
 .bi-chevron-bar-expand::before { content: "\f275"; }
