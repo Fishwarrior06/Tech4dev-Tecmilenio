@@ -571,16 +571,17 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 1px solid #059652; /* Borde con el color deseado */
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: #059652; /* Color del ícono */
   margin-right: 10px;
   transition: 0.3s;
 }
 
+
 .footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  color: #26d07c;
+  border-color: #26d07c;
 }
 
 .footer h4 {
@@ -828,7 +829,7 @@ section,
   display: block;
   width: 60px;
   height: 3px;
-  background: var(--accent-color);
+  background: var(--accent-color2);
   left: 0;
   right: 0;
   bottom: 0;
@@ -1832,11 +1833,12 @@ section,
   line-height: 1;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
+  color: #00534c; 
 }
 
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
-  color: var(--accent-color);
+  color: #26d07c;
 }
 
 .portfolio .portfolio-filters li:first-child {
@@ -1907,7 +1909,7 @@ section,
 
 .portfolio .portfolio-content .portfolio-info .preview-link:hover,
 .portfolio .portfolio-content .portfolio-info .details-link:hover {
-  color: var(--accent-color);
+  color: #26d07c;
 }
 
 .portfolio .portfolio-content .portfolio-info .details-link {
@@ -1969,7 +1971,7 @@ section,
 }
 
 .team .member .member-img .social a:hover {
-  color: var(--accent-color);
+  color: #26d07c;
 }
 
 .team .member .member-info {
@@ -2038,7 +2040,7 @@ section,
 }
 
 .blog-posts .title a:hover {
-  color: var(--accent-color);
+  color: #26d07c;
 }
 
 .blog-posts .post-author-img {
@@ -2079,26 +2081,23 @@ section,
 }
 
 .blog-pagination li a {
-  color: var(--accent-color);
+  color: #26d07c;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--accent-color2);
+  background-color: #ffffff;
 }
 
 .blog-pagination li a.active,
 .blog-pagination li a:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: #00534c;
+  color: #ffffff; /* El texto se vuelve blanco al hacer hover o estar activo */
 }
 
-.blog-pagination li a.active a,
-.blog-pagination li a:hover a {
-  color: var(--contrast-color);
-}
 
 /*--------------------------------------------------------------
 # Blog Details Section
@@ -2161,7 +2160,7 @@ section,
   top: 0;
   bottom: 0;
   width: 3px;
-  background-color: var(--accent-color);
+  background-color: #26d07c;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -2404,7 +2403,7 @@ section,
 
 .contact .info-item i {
   font-size: 20px;
-  color: var(--accent-color);
+  color: var(--accent-color2);
   width: 56px;
   height: 56px;
   display: flex;
@@ -2412,7 +2411,7 @@ section,
   align-items: center;
   transition: all 0.3s ease-in-out;
   border-radius: 50%;
-  border: 2px dotted color-mix(in srgb, var(--accent-color), transparent 40%);
+  border: 2px dotted color-mix(in srgb, var(--accent-color2), transparent 40%);
 }
 
 .contact .info-item h3 {
@@ -2643,12 +2642,12 @@ section,
 }
 
 .recent-posts-widget .post-item h4 a {
-  color: var(--default-color);
+  color: #00534c;
   transition: 0.3s;
 }
 
 .recent-posts-widget .post-item h4 a:hover {
-  color: var(--accent-color);
+  color: #059652;
 }
 
 .recent-posts-widget .post-item time {
