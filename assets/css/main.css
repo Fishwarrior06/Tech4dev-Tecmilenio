@@ -1945,8 +1945,8 @@ section,
 }
 
 .team .member .member-img img {
-  position: relative;
-  z-index: 1;
+  width: 400px;
+  height: 350px;
 }
 
 .team .member .member-img .social {
@@ -2045,6 +2045,7 @@ section,
 
 .blog-posts .post-author-img {
   width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 15px;
 }
@@ -2513,7 +2514,8 @@ section,
 }
 
 .blog-author-widget img {
-  max-width: 160px;
+  width: 100px;
+  height: 100px;
 }
 
 .blog-author-widget h4 {
@@ -2713,4 +2715,94 @@ section,
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.more-text {
+  color: #26d07c;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.more-text:hover {
+  text-decoration: underline;
+}
+
+.position-relative {
+  position: relative;
+}
+
+/* Fondo oscuro detrás del pop-up */
+.popup-overlay {
+  display: none; /* Inicialmente está oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+  z-index: 999;
+}
+
+/* Estilos para el pop-up */
+.popup {
+  display: none; /* Inicialmente está oculto */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el pop-up */
+  background: white;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  width: 350px;
+  max-width: 90%;
+  z-index: 1000;
+  text-align: center;
+}
+
+/* Botón de cierre más grande */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px; /* Tamaño de la "X" */
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+}
+
+.close-btn:hover {
+  color: #d00;
+}
+
+/* Estilo de la lista dentro del pop-up */
+.popup ul {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.popup ul li:last-child {
+  border-bottom: none;
+}
+
+/* Imágenes dentro del pop-up */
+.popup ul li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }

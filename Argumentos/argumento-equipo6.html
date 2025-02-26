@@ -27,6 +27,9 @@
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
 
+  <!-- Js Popup -->
+  <script src="popup tipo ig.js"></script>
+
   <!-- =======================================================
   * Template Name: Moderna
   * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
@@ -97,7 +100,7 @@
 
                 <div class="meta-top">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i>Placeholder</li>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i>Nicolás Rodríguez</li>
                     <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2020-01-01">Jan 1, 2022</time></li>
                   </ul>
                 </div><!-- End meta top -->
@@ -130,7 +133,7 @@
                     Quia et suscipit non sequi. Maxime sed odit. Beatae nesciunt nesciunt accusamus quia aut ratione aspernatur dolor. Sint harum eveniet dicta exercitationem minima. Exercitationem omnis asperiores natus aperiam dolor consequatur id ex sed. Quibusdam rerum dolores sint consequatur quidem ea.
                     Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum quibusdam voluptatem voluptatem accusamus mollitia aut atque aut.
                   </p>
-                  <img src="../assets/img/blog/blog-inside-post.jpg" class="img-fluid" alt="">
+                  <img src="../assets/img/Feria/Nicolás Rodríguez Amarís/Captura de pantalla (66).png" class="img-fluid" alt="">
 
                   <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
                   <p>
@@ -169,11 +172,48 @@
             <!-- Blog Author Widget -->
             <div class="blog-author-widget widget-item">
 
-              <div class="d-flex flex-column align-items-center">
-                <img src="../assets/img/blog/blog-author.jpg" class="rounded-circle flex-shrink-0" alt="">
-                <h4>Jane Smith</h4>
+              <div class="d-flex flex-column align-items-center position-relative">
+                <img src="../assets/img/Feria/Nicolás Rodríguez Amarís/fotos individuales/c868e99a-2fe6-4d87-8669-eb2a60765574.jpg"
+                     class="rounded-circle flex-shrink-0" alt="">
+                <h4>Nicolás Rodríguez</h4>  
+
+                <!-- Fondo oscuro detrás del pop-up -->
+                <div id="popup-overlay" class="popup-overlay"></div>
+            
+                <!-- Pop-up con botón de cierre -->
+                <div class="popup">
+                    <span class="close-btn" onclick="closePopup(this)">&times;</span> 
+                    <ul>
+                        <li>
+                          <img src="../assets/img/Feria/Nicolás Rodríguez Amarís/fotos individuales/53b2abcd-ea5b-45bd-b902-2d374a2e15ef.jpg"> 
+                          <span>Agustin </span>
+                        </li> 
+                        <li>
+                          <img src="../assets/img/Feria/Nicolás Rodríguez Amarís/fotos individuales/1946516b-051e-44ae-a664-8f6e6f369dad.jpg">
+                          <span>Emilio Garza</span>
+                        </li>
+                        <li>
+                          <img src="../assets/img/Feria/Nicolás Rodríguez Amarís/fotos individuales/54d30da5-db61-48e8-9096-4aea486738ff.jpg"> 
+                          <span> </span>
+                        </li>
+                        <li>
+                          <img src="../assets/img/Feria/Nicolás Rodríguez Amarís/fotos individuales/274028fc-edaa-4743-b567-e6f41c27600a.jpg"> 
+                          <span> </span>
+                        </li>
+                        <li>
+                          <img src="../assets/img/Feria/Nicolás Rodríguez Amarís/fotos individuales/1e988ce0-b48a-4aba-81ab-3ccca05b5e94.jpg">
+                          <span> </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón que activa el pop-up -->
+                <span class="more-text" onclick="togglePopup()">y 5 personas más</span>
+            
                 <div class="social-links">
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i class="biu bi-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/hector-david-ortega-garcia-1534b9288/" target="_blank" rel="noopener noreferrer">
+                        <i class="biu bi-linkedin"></i>
+                    </a>
                 </div>
 
                 <p>
