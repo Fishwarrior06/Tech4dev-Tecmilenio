@@ -27,6 +27,9 @@
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
 
+  <!-- Js Popup -->
+  <script src="popup tipo ig.js"></script>
+
   <!-- =======================================================
   * Template Name: Moderna
   * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
@@ -97,7 +100,7 @@
 
                 <div class="meta-top">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i>Placeholder</li>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i>Héctor Ortega</li>
                     <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2020-01-01">Jan 1, 2022</time></li>
                   </ul>
                 </div><!-- End meta top -->
@@ -130,7 +133,7 @@
                     Quia et suscipit non sequi. Maxime sed odit. Beatae nesciunt nesciunt accusamus quia aut ratione aspernatur dolor. Sint harum eveniet dicta exercitationem minima. Exercitationem omnis asperiores natus aperiam dolor consequatur id ex sed. Quibusdam rerum dolores sint consequatur quidem ea.
                     Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum quibusdam voluptatem voluptatem accusamus mollitia aut atque aut.
                   </p>
-                  <img src="../assets/img/blog/blog-inside-post.jpg" class="img-fluid" alt="">
+                  <img src="../assets/img/Feria/Alejandro Roman Ramirez - negro/Equipo organizador.jpeg" alt="" width="650px" height="500px">
 
                   <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
                   <p>
@@ -169,17 +172,53 @@
             <!-- Blog Author Widget -->
             <div class="blog-author-widget widget-item">
 
-              <div class="d-flex flex-column align-items-center">
-                <img src="../assets/img/blog/blog-author.jpg" class="rounded-circle flex-shrink-0" alt="">
-                <h4>Jane Smith</h4>
-                <div class="social-links">
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i class="biu bi-linkedin"></i></a>
+              <div class="d-flex flex-column align-items-center position-relative">
+                <img src="../assets/img/Feria/Alejandro Roman Ramirez - negro/Hector David Ortega Garcia - copia.JPG"
+                     class="rounded-circle flex-shrink-0" alt="">
+                <h4>Héctor Ortega</h4>  
+
+                <!-- Fondo oscuro detrás del pop-up -->
+                <div id="popup-overlay" class="popup-overlay"></div>
+            
+                <!-- Pop-up con botón de cierre -->
+                <div class="popup">
+                    <span class="close-btn" onclick="closePopup(this)">&times;</span> 
+                    <ul>
+                        <li>
+                          <img src="../assets/img/Feria/Alejandro Roman Ramirez - negro/Eliezer de la Cruz Peña - copia.JPG"> 
+                          <span>Eliezer de la Cruz</span>
+                        </li> 
+                        <li>
+                          <img src="../assets/img/Feria/Alejandro Roman Ramirez - negro/Erick Mauricio Santiago Díaz - copia.JPG">
+                          <span>Erick Santiago</span>
+                        </li>
+                        <li>
+                          <img src="../assets/img/Feria/Alejandro Roman Ramirez - negro/Andres Jair Abarca Ulloa - copia.JPG"> 
+                          <span>Andres Abarca</span>
+                        </li>
+                        <li>
+                          <img src="../assets/img/Feria/Alejandro Roman Ramirez - negro/Emilia Isabel Garcia Karo - copia.JPG"> 
+                          <span>Emilia Garcia</span>
+                        </li>
+                        <li>
+                          <img src="../assets/img/Feria/Alejandro Roman Ramirez - negro/Alejandro Roman Ramirez - copia.JPG">
+                          <span>Alex Roman</span>
+                        </li>
+                    </ul>
                 </div>
 
+                <!-- Botón que activa el pop-up -->
+                <span class="more-text" onclick="togglePopup()">y 5 personas más</span>
+            
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/hector-david-ortega-garcia-1534b9288/" target="_blank" rel="noopener noreferrer">
+                        <i class="biu bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>                      
                 <p>
-                  Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
+                  Persona con un interes inexpicable por las computadoras y todo tipo de tecnologias, Siempre interesada y curiosa por todo.
                 </p>
-
               </div>
             </div><!--/Blog Author Widget -->
 
