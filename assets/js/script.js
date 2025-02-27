@@ -69,7 +69,10 @@ let voteChart = new Chart(ctx, {
             }
         },
         scales: {
-            x: { beginAtZero: true },
+            x: { 
+                beginAtZero: true,
+                display: false // Esto elimina los nombres del eje x
+            },
             y: { beginAtZero: true }
         }
     },

@@ -1945,8 +1945,15 @@ section,
 }
 
 .team .member .member-img img {
-  width: 400px;
-  height: 350px;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) { /* Aplicará a pantallas más grandes */
+  .team .member .member-img img {
+    width: 400px;
+    height: 350px;
+  }
 }
 
 .team .member .member-img .social {
