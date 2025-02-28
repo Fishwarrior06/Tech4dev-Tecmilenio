@@ -2796,7 +2796,7 @@ section,
 .popup ul li {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   padding: 10px;
   border-bottom: 1px solid #ddd;
   width: 100%;
@@ -2812,4 +2812,37 @@ section,
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.image-container {
+  display: flex;
+  justify-content: right;
+  gap: 30px; /* Separación entre las imágenes */
+  flex-wrap: wrap;
+}
+
+.image-container img {
+  width: 105px !important; /* Tamaño predeterminado para las imágenes */
+  height: auto !important; /* Mantiene la proporción de las imágenes */
+  transition: transform 0.3s ease !important; /* Animación suave al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+  .image-container img {
+    width: 32px !important; /* Tamaño más pequeño en pantallas pequeñas */
+  }
+
+  .image-container {
+    gap: 7px !important; /* Reduce el espacio entre las imágenes en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container img {
+    width: 32px !important; /* Tamaño más pequeño en dispositivos muy pequeños */
+  }
+
+  .image-container {
+    gap: 7px !important; /* Reduce aún más el espacio entre las imágenes */
+  }
 }
