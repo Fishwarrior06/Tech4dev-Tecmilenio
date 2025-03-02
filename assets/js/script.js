@@ -5,12 +5,10 @@ const colors = [
 
 let previousVotes = {};
 
-// Función para verificar si los votos han cambiado
 function isDataChanged(newVotes) {
     return JSON.stringify(previousVotes) !== JSON.stringify(newVotes);
 }
 
-// Función para obtener votos desde el backend
 async function fetchVotes() {
     try {
         const response = await fetch('/get-votes');
@@ -22,14 +20,9 @@ async function fetchVotes() {
         }
 
         let votes = {};
-        for (let i = 1; i <= 10; i++) {
-            votes[`Equipo ${i}`] = 0;
-        }
-
         data.values.slice(1).forEach((row) => {
-            let team = row[2]; // Columna "¿Quién debe ganar según tú?"
+            let team = row[2]; 
             if (!team) return;
-
             let teamNumber = parseInt(team.split(" ")[1]);
             if (teamNumber >= 1 && teamNumber <= 10) {
                 votes[`Equipo ${teamNumber}`] = (votes[`Equipo ${teamNumber}`] || 0) + 1;
@@ -54,6 +47,8 @@ let voteChart = new Chart(ctx, {
             label: 'Votos',
             data: new Array(10).fill(0),
             backgroundColor: colors,
+            borderColor: colors,
+            borderWidth: 1
         }]
     },
     options: {
@@ -70,16 +65,51 @@ let voteChart = new Chart(ctx, {
         },
         scales: {
             x: { 
-                beginAtZero: true,
-                display: false // Esto elimina los nombres del eje x
+                ticks: { display: false }, 
+                grid: { display: false }
             },
-            y: { beginAtZero: true }
+            y: { 
+                beginAtZero: true 
+            }
+        },
+        interaction: {
+            mode: null, // Desactivamos cualquier tipo de interacción (incluyendo hover)
+            intersect: false
         }
     },
-    plugins: [ChartDataLabels]
+    plugins: [ChartDataLabels, {
+        afterDraw: function(chart) {
+            const ctx = chart.ctx;
+            const images = [
+                "assets/img/Feria/Alejandro Roman Ramirez - negro/NetCrew logo.jpg",
+                "assets/img/Feria/Alonso Renovato Esparza - Naranja/Logo.jpg",
+                "assets/img/Feria/David Alejandro Siu Manjarrez - Celeste/byteway_logo_hd.png",
+                "assets/img/Feria/Gamaliel Alejandro Mora Montemayor - Azul/Logo Hawkconnect.jpg",
+                "assets/img/Feria/Jose Alonso Corona Contreras/Logo NetCraft.png",
+                "assets/img/Feria/Nicolás Rodríguez Amarís/logo tt.jpg",
+                "assets/img/Feria/Pablo Sebastián Núñez González - Blanco/Logo equipo 4.png",
+                "assets/img/Feria/Santiago Sebastian Rojo Márquez - Rojo/Logo Equipo Rojo.jpg",
+                "assets/img/placeholder-300x300.png",
+                "assets/img/Feria/Angel Austrer Aguero Avila/imagen_2025-02-28_000107502.png"
+            ];
+
+            images.forEach((imageSrc, index) => {
+                let image = new Image();
+                image.src = imageSrc;
+                image.onload = function() {
+                    let x = chart.scales.x.getPixelForValue(index) - 45;
+                    let y = chart.scales.y.bottom - 90.2;  
+                    console.log(`Dibujando imagen ${index + 1} en X: ${x}, Y: ${y}`);
+                    ctx.drawImage(image, x, y, 90, 90);
+                };
+                image.onerror = function() {
+                    console.error(`Error al cargar la imagen: ${imageSrc}`);
+                };
+            });
+        }
+    }]
 });
 
-// Actualizar gráfico
 function updateChart(votes) {
     let teams = Object.keys(votes);
     voteChart.data.labels = teams;
@@ -87,6 +117,5 @@ function updateChart(votes) {
     voteChart.update();
 }
 
-// Obtener los votos y actualizar cada 5 segundos
 fetchVotes();
 setInterval(fetchVotes, 5000);
