@@ -114,33 +114,34 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+            <form id="contact-form" action="https://formspree.io/f/xldgqwdz" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
               <div class="row gy-4">
-
+            
                 <div class="col-md-6">
                   <input type="text" name="name" class="form-control" placeholder="Tu nombre" required="">
                 </div>
-
+            
                 <div class="col-md-6 ">
                   <input type="email" class="form-control" name="email" placeholder="Tu correo" required="">
                 </div>
-
+            
                 <div class="col-md-12">
                   <input type="text" class="form-control" name="subject" placeholder="Asunto" required="">
                 </div>
-
+            
                 <div class="col-md-12">
                   <textarea class="form-control" name="message" rows="4" placeholder="Mensaje" required=""></textarea>
                 </div>
-
+            
                 <div class="col-md-12 text-center">
-                  <div class="loading">Cargando...</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Tu mensaje ha sido enviado!. Gracias!</div>
-
+                  <div class="loading" style="display: none;">Cargando...</div>
+                  <div class="error-message" style="display: none;">Tu mensaje ha sido enviado!. Gracias!</div>
+                  <div class="sent-message" style="display: none;">Tu mensaje ha sido enviado!. Gracias!</div>
+            
                   <button type="submit">Enviar mensaje</button>
+                <div style="color: #00534c";>
+                <a style="padding: 5px; text-align: center;"><strong>Muchas gracias por haberme contactado!</strong></a>
                 </div>
-
               </div>
             </form>
           </div><!-- End Contact Form -->
@@ -214,6 +215,12 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Agregar la librería de confeti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Enlazamos el archivo JavaScript externo -->
+  <script src="js/form-handler.js"></script>
 
 </body>
 
