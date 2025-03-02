@@ -1,6 +1,6 @@
 const colors = [
-    "#FF5733", "#33FF57", "#3357FF", "#FF33A6", "#FFD633", 
-    "#33FFDA", "#A633FF", "#FF8133", "#33FF8F", "#FF3333"
+    "#000000", "#F76b0e", "#51D1F6", "#023E8A", "#FFD633", 
+    "#2E6F40", "#E0E0E0", "#FF0000", "#8806CE", "#FF3333"
 ];
 
 let previousVotes = {};
@@ -89,7 +89,7 @@ let voteChart = new Chart(ctx, {
                 "assets/img/Feria/Nicolás Rodríguez Amarís/logo tt.jpg",
                 "assets/img/Feria/Pablo Sebastián Núñez González - Blanco/Logo equipo 4.png",
                 "assets/img/Feria/Santiago Sebastian Rojo Márquez - Rojo/Logo Equipo Rojo.jpg",
-                "assets/img/placeholder-300x300.png",
+                "assets/img/Feria/Adrián Alonso Jair Morales Márquez - Violeta/Redes MZDG (logo).png",
                 "assets/img/Feria/Angel Austrer Aguero Avila/imagen_2025-02-28_000107502.png"
             ];
 
@@ -97,10 +97,20 @@ let voteChart = new Chart(ctx, {
                 let image = new Image();
                 image.src = imageSrc;
                 image.onload = function() {
-                    let x = chart.scales.x.getPixelForValue(index) - 45;
-                    let y = chart.scales.y.bottom - 90.2;  
+                    // Definir un tamaño por defecto de la imagen
+                    let imageSize = 86;  // Tamaño predeterminado de la imagen
+
+                    // Verificar el tamaño de la pantalla y ajustar el tamaño de la imagen
+                    if (window.innerWidth <= 768) {
+                        imageSize = 30;  // Tamaño más pequeño para móviles
+                    }
+
+                    // Ajustamos la posición de las imágenes para que no se mueva todo
+                    let x = chart.scales.x.getPixelForValue(index) - (imageSize / 2);  // Centrar la imagen
+                    let y = chart.scales.y.bottom - imageSize - 10;  // Ajusta la posición Y
+
                     console.log(`Dibujando imagen ${index + 1} en X: ${x}, Y: ${y}`);
-                    ctx.drawImage(image, x, y, 90, 90);
+                    ctx.drawImage(image, x, y, imageSize, imageSize);
                 };
                 image.onerror = function() {
                     console.error(`Error al cargar la imagen: ${imageSrc}`);

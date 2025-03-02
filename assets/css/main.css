@@ -2705,14 +2705,16 @@ section,
   width: 1220px; /* Ajusta el ancho del gráfico según sea necesario */
   max-width: 1220px;
   height: 500px;
-  margin: 0 center; /* Centra el gráfico en la pantalla */
+  margin: 0 auto; /* Centra el gráfico en la pantalla */
 }
 
 @media (max-width: 768px) {
   #voteChart {
-    width: 2000px;   /* Ajusta el ancho del gráfico para pantallas más pequeñas */
+    width: 100%;  /* Ajusta el ancho del gráfico para pantallas más pequeñas */
+    height: 400px; /* O ajusta la altura como lo necesites */
   }
 }
+
 
 .map-container {
   display: flex;
