@@ -252,6 +252,26 @@ h6 {
   color: var(--heading-color);
 }
 
+.header2 {
+  --background-color: rgba(255, 255, 255, 0);
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 15px 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.header2 .logo {
+  line-height: 1;
+}
+
+.header2 .logo img {
+  max-height: 100px;
+  width: 150px;
+}
+
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
@@ -273,10 +293,11 @@ h6 {
     display: flex;
     list-style: none;
     align-items: center;
+    position: center;
   }
 
   .navmenu li {
-    position: relative;
+    position: center;
   }
 
   .navmenu a,
@@ -302,7 +323,7 @@ h6 {
   }
 
   .navmenu li:last-child a {
-    padding-right: 0;
+    padding-right: 0px;
   }
 
   .navmenu li:hover>a,
