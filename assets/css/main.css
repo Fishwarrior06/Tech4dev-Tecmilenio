@@ -1969,7 +1969,7 @@ section,
 .team .member .member-img .social a {
   transition: 0.3s;
   color: var(--contrast-color);
-  font-size: 20px;
+  font-size: 40px;
   margin: 0 8px;
 }
 
