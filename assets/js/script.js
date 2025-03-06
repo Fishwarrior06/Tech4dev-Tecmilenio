@@ -19,13 +19,19 @@ async function fetchVotes() {
             return;
         }
 
+        // Inicializar todos los equipos del 1 al 10 con 0 votos
         let votes = {};
+        for (let i = 1; i <= 10; i++) {
+            votes[`Equipo ${i}`] = 0;
+        }
+
+        // Contar los votos reales
         data.values.slice(1).forEach((row) => {
             let team = row[2]; 
             if (!team) return;
             let teamNumber = parseInt(team.split(" ")[1]);
             if (teamNumber >= 1 && teamNumber <= 10) {
-                votes[`Equipo ${teamNumber}`] = (votes[`Equipo ${teamNumber}`] || 0) + 1;
+                votes[`Equipo ${teamNumber}`] += 1;
             }
         });
 
