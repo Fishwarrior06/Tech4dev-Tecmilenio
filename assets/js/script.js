@@ -11,7 +11,7 @@ function isDataChanged(newVotes) {
 
 async function fetchVotes() {
     try {
-        const response = await fetch('https://tech4dev-tecmilenio.vercel.app/get-votes');
+        const response = await fetch('get-votes');
         const data = await response.json();
 
         if (!data || !data.values) {
