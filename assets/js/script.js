@@ -1,6 +1,3 @@
-const cors = require('cors');
-app.use(cors());
-
 const colors = [
     "#000000", "#F76b0e", "#51D1F6", "#023E8A", "#FFD633", 
     "#2E6F40", "#E0E0E0", "#FF0000", "#8806CE", "#FF3333"
