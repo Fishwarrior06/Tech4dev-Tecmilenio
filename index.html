@@ -82,6 +82,11 @@
     const modal = document.getElementById('livechat_modal');
     const close = document.getElementById('livechat_modal_close');
   
+    // Abrir modal automáticamente al cargar la página
+    window.addEventListener('load', function() {
+      modal.style.display = 'block';
+    });
+  
     // Abrir modal al hacer click en el botón
     button.addEventListener('click', function() {
       modal.style.display = 'block';
