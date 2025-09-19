@@ -15,7 +15,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PVQMDNV6');</script>
   <!-- End Google Tag Manager -->
-
+  
   <!-- Start of LiveChat (www.livechat.com) code -->
   <script>
     window.__lc = window.__lc || {};
@@ -23,7 +23,7 @@
     window.__lc.integration_name = "manual_onboarding";
     window.__lc.product_name = "livechat";
   
-    // API para abrir el chat automáticamente al cargar
+    // Abrir automáticamente al cargar
     window.LC_API = window.LC_API || {};
     window.LC_API.on_after_load = function() {
       LC_API.open_chat_window();
@@ -48,6 +48,27 @@
     powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
   </noscript>
   <!-- End of LiveChat code -->
+  
+  <!-- CSS para pantalla completa -->
+  <style>
+    /* Forzar el chat a ocupar toda la ventana */
+    #lc_chat_layout {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 0 !important;
+      z-index: 99999 !important;
+    }
+  
+    /* Ajustar el iframe interno y el contenido */
+    #lc_chat_container, #lc_chat_container * {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  </style>
+
   
   <!-- Favicons -->
   <link href="assets/img/logo_chiquito.png" rel="icon">
